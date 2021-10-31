@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Park</title>
+    <link rel="stylesheet" href="/css/800.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        Team <span id="logo">ROMAIN</span>
+    </header>
+    <div class="hero">
+        <table id="herotable">
+            <tr>
+                <td>
+                    <div id="fps">
+                        Find Parking Slots
+                    </div>
+                    <div id="wbs">
+                        without breaking a sweat
+                    </div>
+                </td>
+                <td>
+                    <div class="right">
+                        <div class="btndiv"><button id="curloc">
+                                Find parking near you
+                            </button>
+                        </div>
+                        <div class="promptinfo">(Allow location access when prompted)</div>
+                        <div id="separator"></div>
+                        <form action="/home" method="post">
+                            <div id="inputdiv">
+                                <input type="text" id="address" placeholder="Enter destination" name="addresstocheck">
+                            </div>
+                            <div class="promptinfo">(Include city name for better results)</div>
+                            <div class="btndiv"><button id="desloc" type="submit">
+                                    Check at a destination
+                                </button></div>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="creditshead">
+        DESIGNED AND DEVELOPED BY
+    </div>
+    <div id="creditstext">
+        ASWIN SREEKUMAR - GREESHWAR R S - KAILASH HARI - SATISH KUMAR L
+    </div>
+    <div id="creditstext">
+        NIT Trichy
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/home.js"></script>
+</body>
+
+</html>

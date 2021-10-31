@@ -1,0 +1,188 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* border: 4pt red solid; */
+}
+body {
+    background-image: url("../assets/bg.png");
+    background-size: 110vw 140vh;
+    background-position: 50% 0%;
+    background-repeat: no-repeat;
+    width: auto;
+    height: auto;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+header {
+    width: 70vw;
+    min-height: 3vh;
+    height: fit-content;
+    margin-top: 3vh;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 3rem;
+}
+#fps {
+    font-weight: 600;
+    width: 100%;
+    font-size: 64px;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+#wbs {
+    font-weight: 600;
+    width: 100%;
+    font-size: 48px;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.herotext {
+    margin-top: 10vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+.btndiv {
+    display: flex;
+    justify-content: center;
+}
+button {
+    background-color: #028090;
+    font-family: 'Poppins';
+    font-size: 2rem;
+    font-weight: 600;
+    border-radius: 4rem;
+    color: azure;
+    width: 80%;
+    height: 6vh;
+    margin-left: auto;                                                                                                                                                                  
+    margin-right: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.promptinfo {
+    font-size: 1.5rem;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2vh;
+}
+#map {
+    height: 50vh;
+    border-radius: 10px;
+    border: 0;
+    width: 80vw;
+    margin-top: 1vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+.loccontainer {
+    width: 80vw;
+    margin-left: auto;
+    margin-top: 4rem;
+    margin-right: auto;
+    max-height: 30vh;
+    background-color: none;
+    overflow-y: scroll;
+}
+#loctable {
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.loccard {
+    width: 95%;
+    height: 5vh;
+    border-radius: 10pt;
+    font-size: 2.4rem;
+}
+.right {
+    background-color: #b0f0f8;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    border-radius: 6rem;
+    border: 5px solid #028090;
+}
+#separator {
+    width: 100%;
+    height: 5px;
+    background-color: #028090;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+#inputdiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+#address {
+    width: 70%;
+    height: 4vh;
+    margin-left: auto;
+    font-size: 2rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 0.75rem;
+    font-family: 'Poppins';
+    margin-right: auto;
+    border-radius: 2rem;
+}
+.loccard {
+    width: 95%;
+    height: 6vh;
+    margin-top: 0.5rem;
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 5rem;
+    display: flex;
+    justify-content: center;
+}
+.redcard {
+    border-color: #C0392B;
+}
+.greencard {
+    border-color: #27AE60;
+}
+.orangecard {
+    border-color: #e67e22;
+}
+.textspan {
+    height: fit-content;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 1vw;
+}
+.cardimg {
+    height: 60%;
+    width: fit-content;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+#creditshead {
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 5vh;
+}
+#creditstext {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 24px;
+    font-weight: 600;
+}
+.cline {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}

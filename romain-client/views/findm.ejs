@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Find slot</title>
+    <link rel="stylesheet" href="/css/900.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header id="findheader">
+        Team <span id="logo">ROMAIN</span>
+    </header>
+    <div id="map"></div>
+    <div class="loccontainer">
+        <div id="loctable">
+            <% loclist.forEach((loc, i) => { %>
+            <% if (loc.empty / loc.tot > 0.6) { %>
+            <div class="cardcontainer">
+                <div class="loccard greencard" onclick="directme('<%= i %>')">
+                    <img class="cardimg" src="http://maps.google.com/mapfiles/kml/pal3/icon<%= i+8 %>.png">
+                    <span class="textspan"><%= loc.slotid.toUpperCase() %> Free slots:
+                        <%= loc.empty %></span>
+                </div>
+            </div>
+            <% } else if (loc.empty / loc.tot > 0.2) { %>
+            <div class="cardcontainer">
+                <div class="loccard orangecard" onclick="directme('<%= i %>')">
+                    <img class="cardimg" src="http://maps.google.com/mapfiles/kml/pal3/icon<%= i+8 %>.png">
+                    <span class="textspan"><%= loc.slotid.toUpperCase() %> Free slots:
+                        <%= loc.empty %></span>
+                </div>
+            </div>
+            <% } else { %>
+            <div class="cardcontainer">
+                <div class="loccard redcard" onclick="directme('<%= i %>')">
+                    <img class="cardimg" src="http://maps.google.com/mapfiles/kml/pal3/icon<%= i+8 %>.png">
+                    <span class="textspan"><%= loc.slotid.toUpperCase() %> Free slots:
+                        <%= loc.empty %></span>
+                </div>
+            </div>
+            <% } %>
+            <% }); %>
+        </div>
+    </div>
+    <script>
+        function directme(pos) {
+            // console.log(pos);
+            var index = parseInt(pos);
+            var newloclist = JSON.parse('<%- JSON.stringify( loclist)%>');
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    location.href =
+                        `https://www.google.com/maps/dir/?api=1&origin=${position.coords.latitude}%2C${position.coords.longitude}&destination=${newloclist[index].lat}%2C${newloclist[index].lon}&travelmode=driving`;
+                },
+                (errobj) => {
+                    console.log("Error in getting position!");
+                    location.href = errobj.message;
+                }, {
+                    enableHighAccuracy: true,
+                    maximumAge: 10000
+                });
+        }
+        let map;
+        mypos = {
+            lat: parseFloat("<%= lat%>"),
+            lng: parseFloat("<%= lon%>")
+        };
+
+        function initMap() {
+            map = new google.maps.Map(document.querySelector('#map'), {
+                center: mypos,
+                zoom: 15,
+            });
+            new google.maps.Marker({
+                position: mypos,
+                map,
+                title: "You are here",
+            });
+            newloclist = '<%- JSON.stringify( loclist)%>';
+            var i = 8;
+            JSON.parse(newloclist).forEach(loc => {
+                var marker = new google.maps.Marker({
+                    position: {
+                        lat: loc.lat,
+                        lng: loc.lon
+                    },
+                    map,
+                    url: `https://www.google.com/maps/dir/?api=1&origin=${mypos.lat}%2C${mypos.lng}&destination=${loc.lat}%2C${loc.lon}&travelmode=driving`,
+                    icon: {
+                        url: `http://maps.google.com/mapfiles/kml/pal3/icon${i}.png`,
+                        scaledSize: new google.maps.Size(80, 80)
+                    },
+                    title: `ID: ${loc.slotid}  Free slots: ${loc.empty.toString()}`,
+                });
+                google.maps.event.addListener(marker, 'click', function () {
+                    window.location.href = marker.url;
+                    window.open(this.url, '_blank');
+                });
+                i += 1;
+            });
+        }
+    </script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy-ZhG4lgwb5To_WSftmdAGilW0TZHumo&callback=initMap&v=weekly"
+        async></script>
+</body>
+
+</html>

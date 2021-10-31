@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Park</title>
+    <link rel="stylesheet" href="/css/900.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        Team <span id="logo">ROMAIN</span>
+    </header>
+    <div class="hero">
+        <div class="herotext">
+            <div id="fps">
+                Find Parking Slots
+            </div>
+            <div id="wbs">
+                without breaking a sweat
+            </div>
+        </div>
+        <div class="right">
+            <div class="btndiv"><button id="curloc">
+                    Find parking near you
+                </button>
+            </div>
+            <div class="promptinfo">(Allow location access when prompted)</div>
+            <div id="separator"></div>
+            <form action="/home" method="post">
+                <div id="inputdiv">
+                    <input type="text" id="address" placeholder="Enter destination" name="addresstocheck">
+                </div>
+                <div class="promptinfo">(Include city name for better results)</div>
+                <div class="btndiv"><button id="desloc" type="submit">
+                        Check at a destination
+                    </button></div>
+            </form>
+        </div>
+        <div id="creditshead">
+            DESIGNED AND DEVELOPED BY
+        </div>
+        <div id="creditstext">
+            <div class="cline">ASWIN SREEKUMAR - GREESHWAR R S</div>
+            <div class="cline">KAILASH HARI - SATISH KUMAR L</div>
+            <div class="cline">NIT Trichy</div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/home.js"></script>
+</body>
+
+</html>
