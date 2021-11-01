@@ -17,5 +17,5 @@ const citySchema = new Schema({
         filledSlots: Number
     }]
 });
-const City = mongoose.model('City', citySchema);
+const City = mongoose.model('City', citySchema, 'cities');
 module.exports = City;

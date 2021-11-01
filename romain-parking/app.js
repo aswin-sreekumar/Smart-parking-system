@@ -9,10 +9,9 @@ const mongoose = require('mongoose');
 const useragent = require('express-useragent');
 const favicon = require('serve-favicon');
 const https = require('https');
-
+const { log } = require('util');
 const app = express();
 const uri = process.env.MONGOURL;
-
 mongoose.connect(uri, {
         useNewUrlParser: true,
         useUnifiedTopology: true
@@ -55,10 +54,11 @@ app.post('/home', function (req, res) {
                 }
             })
             .then(function (response) {
+                console.log(response);
                 res.redirect('/find/' + response.data.results[0].geometry.location.lat + '/' + response.data.results[0].geometry.location.lng);
             })
             .catch(function (error) {
-                console.log(error);
+                res.redirect('/error');
             });
     }
     geocode(req.body.addresstocheck);
@@ -85,9 +85,10 @@ app.get('/find/:lat/:long', async function (req, res) {
     City.find().select({
         _id: 0
     }).then((result) => {
+
         var latf = parseFloat(req.params.lat);
         var lonf = parseFloat(req.params.long);
-        // console.log(result);
+        console.log(result);
         var minDis = Infinity;
         var minCity = "";
         var multiplier = 10000;
@@ -102,9 +103,9 @@ app.get('/find/:lat/:long', async function (req, res) {
             }
             // console.log(city);
         }
-        // console.log(`minCity : ${minCity}`);
+        console.log(`minCity : ${minCity}`);
         Lot(minCity).find().then((result2) => {
-            // console.log('result2', result2);
+            console.log('result2', result2);
             var dists = [];
             for (var i = 0; i < result2.length; i++) {
                 var lot = result2[i];
@@ -130,11 +131,12 @@ app.get('/find/:lat/:long', async function (req, res) {
             request(dmaturl, {
                 json: true
             }, (err, resp, body) => {
-                if (err) {
-                    return console.log(err);
+                if (body.status != 'OK' || body.rows[0].elements[0].status == 'ZERO_RESULTS') {
+                    res.redirect('/error');
                 }
+                console.log(body.rows[0].elements);
                 var dmat = body.rows[0].elements;
-                console.log('dmat', dmat);
+                
                 var dmat2 = [];
                 for (var i = 0; i < dmat.length; i++) {
                     var d = dmat[i];
@@ -164,8 +166,20 @@ app.get('/find/:lat/:long', async function (req, res) {
                     });
                 }
             });
-        }).catch((err) => console.log(err));
+        }).catch((err) => {
+            console.log(err);
+            res.redirect('/error');
+        });
     }).catch((err) => {
         console.log(err);
+        res.redirect('/error');
     });
+});
+app.get('/error', (req, res) => {
+    var ua = useragent.parse(req.headers['user-agent']);
+    if (ua.isMobile) {
+        res.render('errorm');
+    } else {
+        res.render('error');
+    }
 });
