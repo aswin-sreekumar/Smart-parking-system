@@ -1,7 +1,7 @@
 # Smart Parking System
 Vision based Smart Parking system using ESP32-CAMs, Raspberry Pi and cloud deployed NodeJS web-server. 
 
-### Designered and Developed by
+### Designed and Developed by
 - [Kailash Hari](https://github.com/kailashhari)
 - [Satish Kumar L](https://github.com/Satish-Kumar-L)
 - [Greeshwar R S](https://github.com/greesh02)
