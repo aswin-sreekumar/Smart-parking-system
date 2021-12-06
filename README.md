@@ -22,7 +22,7 @@ Vision based Smart Parking system using ESP32-CAMs, Raspberry Pi and cloud deplo
 - Unable to find proper parking spots, some vehicles are parked in narrow spaces causing traffic jams.
 
 ## Solution proposed
-- The project proposed to install low cost camera modules in multiple parking lots across the city, which streams live image to the corresponding remote server 
+- The project proposes to install low cost camera modules in multiple parking lots across the city, which streams live image to the corresponding remote server 
 - The remote server processes the data from the camera module and decides on the number of vacant parking spaces available in the parking lot
 - The remote server updates the number of vacant parking slots and number of filled parking slots in a cloud database
 - The number of vacant parking slots and their location is displayed in a web application accessible to general public and free to use.
@@ -76,7 +76,7 @@ Vision based Smart Parking system using ESP32-CAMs, Raspberry Pi and cloud deplo
 - Pixel data is transmitted to the server through TCP protocol.
 - Since the size of pixel data exceeds the size limit of single TCP socket, pixel data is broken up into chunks and sent individually.
 - The process repeats for every two seconds approximately.
-- 
+
 ### The Server
 - Raspberry Pi 4B is used as local server for image reception, processing, slot computation and updation to cloud.
 - PuTTy is used to connect wirelessly to the Pi over SSH and FileZilla was used to transfer the file over SFTP. 
