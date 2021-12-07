@@ -110,6 +110,8 @@ Vision based Smart Parking system using ESP32-CAMs, Raspberry Pi and cloud deplo
 ### Website
 ![website_pc_2](https://user-images.githubusercontent.com/63254914/145020947-693ba4a2-7d6b-4620-a0fc-46d5aa149523.png)
 ![website_2](https://user-images.githubusercontent.com/63254914/145020963-99ef73c6-62bb-476d-b5e7-9f995055ff43.png)
+
+
 ![mobile_website1](https://user-images.githubusercontent.com/63254914/145021395-9cbd8341-47b8-42f1-af28-5f8a757e90a2.png)
 ![website_mob_2](https://user-images.githubusercontent.com/63254914/145021402-f8dbf62c-af61-411e-97bb-e4c43275f7ae.png)
 
