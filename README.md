@@ -108,7 +108,8 @@ Presentation: [Gslides link](https://docs.google.com/presentation/d/1YP6zdCB5QQF
 
 ### Website
 
-![website_2](https://user-images.gi![145020947-693ba4a2-7d6b-4620-a0fc-46d5aa149523](https://user-images.githubusercontent.com/63254914/155846825-dd552846-f124-47f5-9960-a74f68ef6f15.png)
+![website_2](https://user-images.gi![145020947-693ba4a2-7d6b-4620-a0fc-46d5aa149523](https://user-images.githubusercontent.com/63254914/155846825-dd552846-f124-47f59960-a74f68ef6f15.png)
+
 ![145020947-693ba4a2-7d6b-4620-a0fc-46d5aa149523](https://user-images.githubusercontent.com/63254914/155846844-b46c9ca2-ffcb-4321-aebf-84957cf8c861.png)
 
 ![mobile_website1](https://user-images.githubusercontent.com/63254914/145021395-9cbd8341-47b8-42f1-af28-5f8a757e90a2.png)
